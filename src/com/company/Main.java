@@ -13,5 +13,7 @@ public class Main {
            field.set(person, personality.StringValue());
         }
         System.out.println(person.getName());
+        System.out.println(person.getAge());
+
     }
 }
