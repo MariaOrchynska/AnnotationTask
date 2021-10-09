@@ -3,8 +3,8 @@ package com.company;
 public class Person {
     @Personality(StringValue = "Bob",IntValue = 1)
 
-    String name;
-    int age;
+    private String name;
+    private int age;
 
 
 
