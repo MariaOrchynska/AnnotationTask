@@ -7,20 +7,11 @@ import java.lang.reflect.Field;
 public class Main {
     @SneakyThrows
     public static void main(String[] args)  {
-        Person person = new Person();
-        showName(person);
-        System.out.println(person.getName());
-
+        Personality person = Person.class.getAnnotation(Personality.class);
+        System.out.println("Users name is : " + person.StringValue() + " and age is: "+ person.IntValue());
 
     }
-        private static void showName(Person person) throws Exception {
-        Field[] fields = person.getClass().getDeclaredFields();
-        for (Field field : fields) {
-           Personality personality= field.getAnnotation(Personality.class);
-           field.setAccessible(true);
-           field.set(person, personality.StringValue());
+
 
         }
 
-    }
-}
