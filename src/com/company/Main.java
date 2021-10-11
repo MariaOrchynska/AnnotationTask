@@ -1,5 +1,5 @@
 package com.company;
-@MyAnnotation(Myenum = Days.FRIDAY, number = 6,month = "October", year = 2021,format = "06.10.2021")
+@MyAnnotation(day = Days.FRIDAY, number = 6,month = Month.APRIL, year = 2021,format = "06.10.2021")
 
 public class Main {
 

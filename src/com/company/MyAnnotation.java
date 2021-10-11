@@ -1,9 +1,9 @@
 package com.company;
 
 public @interface MyAnnotation {
-    Days Myenum();
+    Days day();
     int number();
-    String month();
+    Month month();
     int year();
     String format();
 
