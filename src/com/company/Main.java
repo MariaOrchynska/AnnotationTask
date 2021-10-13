@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args)  {
        Person person= new Person();
         setName(person);
-        System.out.println( person.getFirstname());
+        System.out.println(person.getLastName());
 
     }
     @SneakyThrows
@@ -23,11 +23,20 @@ public class Main {
         }
         }
 
+    @SneakyThrows
+public static boolean define(Object o, String fieldName, Person person){
+    Class<?> objectClass = o.getClass();
+    for (Field field : objectClass.getFields()) {
+        if (field.getName().equals(fieldName)) {
+           field.set(person, person.getClass().getAnnotation(Personality.class).IntValue());
+        }
+    }
+    return false;
 
 
 
 }
 
 
-
+    }
 
