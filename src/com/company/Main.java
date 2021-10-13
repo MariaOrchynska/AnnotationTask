@@ -5,13 +5,25 @@ import lombok.SneakyThrows;
 import java.lang.reflect.Field;
 
 public class Main {
-    @SneakyThrows
+
     public static void main(String[] args)  {
-        Personality person = Person.class.getAnnotation(Personality.class);
-        System.out.println("Users name is : " + person.StringValue() + " and age is: "+ person.IntValue());
+       Person person= new Person();
+        setName(person);
+        System.out.println(person.getName());
+
+    }
+    @SneakyThrows
+    public static void setName(Person person){
+        Field [] fields =person.getClass().getDeclaredFields();
+        for(Field field: fields){
+            Personality personality= field.getAnnotation(Personality.class );
+            field.setAccessible(true);
+            field.set(person, person.name);
+        }
 
     }
 
 
-        }
+
+    }
 
